@@ -1,5 +1,6 @@
 package com.ofirtamar.studentlisttask
 
+import android.content.Intent
 import android.util.Log
 import androidx.recyclerview.widget.RecyclerView
 import com.ofirtamar.studentlisttask.databinding.StudentListRowBinding
@@ -15,6 +16,19 @@ class StudentRowViewHolder(
     init {
         binding.studentCheckbox.setOnClickListener { view ->
             student?.checkStatus = binding.studentCheckbox.isChecked
+        }
+
+        binding.root.setOnClickListener {
+            val context = it.context
+            val intent = Intent(context, StudentDetailsActivity::class.java).apply {
+                putExtra("EXTRA_NAME", student?.name)
+                putExtra("EXTRA_ID", student?.id)
+                putExtra("EXTRA_PHONE", student?.phone)
+                putExtra("EXTRA_ADDRESS", student?.address)
+                putExtra("EXTRA_CHECKED", student?.checkStatus)
+                putExtra("EXTRA_AVATAR_URI", student?.avatarUrlString)
+            }
+            context.startActivity(intent)
         }
     }
 

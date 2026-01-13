@@ -26,5 +26,15 @@ abstract class BaseActivity : AppCompatActivity() {
         }
 
         setSupportActionBar(binding.toolbar)
+
+        // Show back button on all activities that are not the main one
+        if (this !is StudentListMainActivity) {
+            supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        }
+    }
+
+    override fun onSupportNavigateUp(): Boolean {
+        onBackPressedDispatcher.onBackPressed()
+        return true
     }
 }

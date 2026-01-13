@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".StudentDetailsActivity">
+
+    <ImageView
+        android:id="@+id/details_avatar"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/details_name_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="name:"
+        android:textStyle="bold"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_avatar" />
+
+    <TextView
+        android:id="@+id/details_name_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/details_name_label"
+        app:layout_constraintTop_toTopOf="@+id/details_name_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Kuku" />
+
+    <TextView
+        android:id="@+id/details_id_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="id:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_name_label" />
+
+    <TextView
+        android:id="@+id/details_id_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/details_id_label"
+        app:layout_constraintTop_toTopOf="@+id/details_id_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="2992929292992" />
+
+    <TextView
+        android:id="@+id/details_phone_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="phone:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_id_label" />
+
+    <TextView
+        android:id="@+id/details_phone_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/details_phone_label"
+        app:layout_constraintTop_toTopOf="@+id/details_phone_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="05434534534" />
+
+    <TextView
+        android:id="@+id/details_address_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="address:"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_phone_label" />
+
+    <TextView
+        android:id="@+id/details_address_value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/details_address_label"
+        app:layout_constraintTop_toTopOf="@+id/details_address_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="Rishon..." />
+
+    <CheckBox
+        android:id="@+id/details_checkbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="checked"
+        android:enabled="false"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/details_address_label" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
