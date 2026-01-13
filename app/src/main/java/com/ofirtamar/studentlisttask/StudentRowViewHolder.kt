@@ -1,11 +1,10 @@
 package com.ofirtamar.studentlisttask
 
 import android.content.Intent
-import android.util.Log
+import android.net.Uri
 import androidx.recyclerview.widget.RecyclerView
 import com.ofirtamar.studentlisttask.databinding.StudentListRowBinding
 import com.ofirtamar.studentlisttask.models.Student
-import com.squareup.picasso.Picasso
 
 class StudentRowViewHolder(
     private val binding: StudentListRowBinding
@@ -40,12 +39,8 @@ class StudentRowViewHolder(
             isChecked = student.checkStatus
             tag = position
         }
-        Log.v("TAG", "Loading image from URI: ${student.avatarUrlString}")
-        Picasso
-            .get()
-            .load(student.avatarUrlString)
-            .placeholder(R.mipmap.ic_launcher)
-            .error(R.mipmap.ic_launcher)
-            .into(binding.studentAvatar)
+        student.avatarUrlString?.let {
+            binding.studentAvatar.setImageURI(Uri.parse(it))
+        }
     }
 }

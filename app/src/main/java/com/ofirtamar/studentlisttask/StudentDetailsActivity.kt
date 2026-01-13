@@ -1,8 +1,8 @@
 package com.ofirtamar.studentlisttask
 
+import android.net.Uri
 import android.os.Bundle
 import com.ofirtamar.studentlisttask.databinding.ActivityStudentDetailsBinding
-import com.squareup.picasso.Picasso
 
 class StudentDetailsActivity : BaseActivity() {
 
@@ -28,10 +28,8 @@ class StudentDetailsActivity : BaseActivity() {
         binding.detailsAddressValue.text = address
         binding.detailsCheckbox.isChecked = checked
 
-        Picasso.get()
-            .load(avatarUri)
-            .placeholder(R.mipmap.ic_launcher)
-            .error(R.mipmap.ic_launcher)
-            .into(binding.detailsAvatar)
+        avatarUri?.let {
+            binding.detailsAvatar.setImageURI(Uri.parse(it))
+        }
     }
 }

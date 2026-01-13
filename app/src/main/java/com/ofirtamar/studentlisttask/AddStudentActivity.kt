@@ -4,7 +4,6 @@ import android.os.Bundle
 import com.ofirtamar.studentlisttask.databinding.ActivityAddStudentBinding
 import com.ofirtamar.studentlisttask.models.Model
 import com.ofirtamar.studentlisttask.models.Student
-import com.squareup.picasso.Picasso
 
 class AddStudentActivity : BaseActivity() {
 
@@ -17,7 +16,6 @@ class AddStudentActivity : BaseActivity() {
         binding = ActivityAddStudentBinding.inflate(layoutInflater)
         super.contentFrame.addView(binding.root)
 
-        // Set the image directly using its resource ID
         binding.addStudentAvatar.setImageResource(R.mipmap.ic_launcher)
 
         binding.addStudentCancelButton.setOnClickListener {
