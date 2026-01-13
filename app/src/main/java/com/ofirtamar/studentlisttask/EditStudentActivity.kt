@@ -2,6 +2,7 @@ package com.ofirtamar.studentlisttask
 
 import android.app.Activity
 import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import com.ofirtamar.studentlisttask.databinding.ActivityEditStudentBinding
 import com.ofirtamar.studentlisttask.models.Model
@@ -25,10 +26,14 @@ class EditStudentActivity : BaseActivity() {
         student?.let { student ->
             binding.editStudentNameInput.setText(student.name)
             binding.editStudentIdInput.setText(student.id)
+            binding.editStudentIdInput.isEnabled = false // The ID should not be editable
             binding.editStudentPhoneInput.setText(student.phone)
             binding.editStudentAddressInput.setText(student.address)
             binding.editStudentCheckbox.isChecked = student.checkStatus
-            binding.editStudentAvatar.setImageResource(R.mipmap.ic_launcher)
+
+            student.avatarUrlString?.let { uriString ->
+                binding.editStudentAvatar.setImageURI(Uri.parse(uriString))
+            }
         }
 
         binding.editStudentCancelButton.setOnClickListener {
