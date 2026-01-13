@@ -26,6 +26,9 @@
         <activity
             android:name=".AddStudentActivity"
             android:parentActivityName=".StudentListMainActivity" />
+        <activity
+            android:name=".EditStudentActivity"
+            android:parentActivityName=".StudentDetailsActivity" />
     </application>
 
 </manifest>

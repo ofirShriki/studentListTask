@@ -10,6 +10,21 @@ class Model private constructor() {
         students.add(student)
     }
 
+    fun updateStudent(student: Student) {
+        val index = students.indexOfFirst { it.id == student.id }
+        if (index != -1) {
+            students[index] = student
+        }
+    }
+
+    fun deleteStudent(studentId: String) {
+        students.removeAll { it.id == studentId }
+    }
+
+    fun getStudentById(studentId: String): Student? {
+        return students.find { it.id == studentId }
+    }
+
     companion object {
         val shared = Model()
     }
