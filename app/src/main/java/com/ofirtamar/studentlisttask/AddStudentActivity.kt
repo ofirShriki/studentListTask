@@ -29,8 +29,7 @@ class AddStudentActivity : BaseActivity() {
             val address = binding.addStudentAddressInput.text.toString()
             val isChecked = binding.addStudentCheckbox.isChecked
 
-            val imageUri = "android.resource://com.ofirtamar.studentlisttask/" + R.mipmap.ic_launcher
-            val newStudent = Student(id, name, phone, address, isChecked, imageUri)
+            val newStudent = Student(id, name, phone, address, isChecked)
             Model.shared.addStudent(newStudent)
             
             setResult(RESULT_OK)

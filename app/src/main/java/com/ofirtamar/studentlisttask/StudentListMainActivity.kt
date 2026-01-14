@@ -13,7 +13,7 @@ class StudentListMainActivity : BaseActivity() {
 
     companion object {
         private const val ADD_STUDENT_REQUEST = 1
-    }
+        }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
