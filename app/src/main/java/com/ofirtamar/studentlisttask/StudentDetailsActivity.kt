@@ -40,7 +40,6 @@ class StudentDetailsActivity : BaseActivity() {
             if (action == "DELETED") {
                 finish()
             } else {
-                // Check for the new ID and update our internal studentId
                 val newStudentId = data?.getStringExtra("EXTRA_NEW_STUDENT_ID")
                 if (newStudentId != null) {
                     studentId = newStudentId
